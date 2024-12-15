@@ -10,5 +10,5 @@ comments: true
 tags: 
 keywords: 
 description: 
-photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-covers/0.JPG
+photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-cover/0.JPG
 ---

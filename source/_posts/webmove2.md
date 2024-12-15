@@ -1,7 +1,7 @@
 ---
 title: 网站接踵而来的第二次长征
 date: 2022/01/03
-photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-covers/18.JPG
+photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-cover/18.JPG
 categories: 砂糖实验室
 avatar: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
