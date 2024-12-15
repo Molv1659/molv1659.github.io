@@ -4,7 +4,7 @@ date: 2021/03/07
 photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-covers/7.JPG
 categories: 砂糖实验室
 avatar: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/Kirito1.jpg
-authorLink: http://www.sisicheng.com/blog
+authorLink: http://www.sisicheng.com
 ---
 permalink: rsa
 目前大家经常看到并容易使用的加密算法就是这个了，之前说的非对称密钥系统中，公钥加密私钥解密，私钥加密公钥解密的特性，想起来就蛮神奇的，好奇怎么实现这一特点的，下面这个视频讲得很清楚，我就不写了23333，直接导过去：
