@@ -83,7 +83,7 @@ theme: Sakura
 deploy:
   type: 'git'
   repo: git@github.com:Molv1659/molv1659.github.io.git
-  brance: master
+  brance: main
 
 #RSS
 feed:
