@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.sisicheng.com/blog
-root: /blog/
+url: http://https://molv1659.github.io
+root: /
 permalink: :year/:title/
 permalink_defaults:
 
@@ -82,7 +82,7 @@ theme: Sakura
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: git@sisicheng.com:/var/repo/hexo.git
+  repo: git@github.com:Molv1659/molv1659.github.io.git
   brance: master
 
 #RSS
