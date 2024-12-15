@@ -82,8 +82,8 @@ theme: Sakura
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: https://${{ secrets.GITHUB_TOKEN }}@github.com/Molv1659/molv1659.github.io.git
-  brance: main
+  repo: git@github.com:Molv1659/molv1659.github.io.git
+  branch: gh-pages
 
 #RSS
 feed:
