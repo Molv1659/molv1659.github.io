@@ -4,10 +4,10 @@ siteName: 冬のせかい
 # favicon and site master avatar
 favicon: /WA2.ico
 avatar: /Kirito1.jpg
-url: http://www.sisicheng.com/blog
-root: /blog/
+url: http://www.sisicheng.com/
+root: /
 description: Winter is coming ...
-cdn: http://www.sisicheng.com/cdn
+cdn: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn
 pjax: 1
 # 1开启
 mathjax: 0
@@ -48,12 +48,12 @@ homeArticleShown: 10
 bgn: 1
 
 bg:
-  - http://www.sisicheng.com/cdn/cover/(1).PNG
-  - http://www.sisicheng.com/cdn/cover/(2).JPG
-  - http://www.sisicheng.com/cdn/cover/(3).jpg
-  - http://www.sisicheng.com/cdn/cover/(4).PNG
-  - http://www.sisicheng.com/cdn/cover/(5).png
-  - http://www.sisicheng.com/cdn/cover/(6).PNG
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(1).PNG
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(2).JPG
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(3).jpg
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(4).PNG
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(5).png
+  - https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/cover/(6).PNG
 
 # 背景图片样式 空 原图效果 filter-dim 阴影 filter-grid 横条 filter-dot 点点
 bgclass: 
@@ -93,7 +93,7 @@ msocial:
 
 # 视频地址为https://cdn.jsdelivr.net/gh/honjun/hojun@1.2/Unbroken.mp4，配置如下
 movies:
-  url: http://www.sisicheng.com/cdn
+  url: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn
   # 多个视频用逗号隔开，随机获取。支持的格式目前已知MP4,Flv。其他的可以试下，不保证有用
   name: violetCM.mp4
 

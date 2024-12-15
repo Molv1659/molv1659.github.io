@@ -1,9 +1,9 @@
 ---
 title: 和莎莫的500天(500 Days of Summer)
 date: 2021/03/12
-photos: http://www.sisicheng.com/cdn/article-covers/2.JPG
+photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-covers/2.JPG
 categories: 男子大学生の日常
-avatar: http://www.sisicheng.com/cdn/Kirito1.jpg
+avatar: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/Kirito1.jpg
 authorLink: http://www.sisicheng.com/blog
 ---
 permalink: 500-days-of-summer

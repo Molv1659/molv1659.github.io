@@ -6,7 +6,7 @@
     "version": "3.9.0"
   },
   "scripts": {
-    "build": "npx hexo clean && npx hexo generate && npx hexo deploy"
+    "update": "git add . && git commit -m 'new version' && git push && npx hexo clean && npx hexo generate && npx hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.7.0",
