@@ -25,6 +25,10 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
+      - name: Setup Git user
+        run: |
+          git config --global user.name "sicheng"
+          git config --global user.email "wsc879453141@gmail.com"
       - name: Install Dependencies
         run: npm install
       - name: Build
