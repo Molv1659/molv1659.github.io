@@ -48,21 +48,21 @@ homeArticleShown: 10
 bgn: 1
 
 bg:
-  - https://molv1659.github.io/cdn/cover/(1).PNG
-  - https://molv1659.github.io/cdn/cover/(2).JPG
-  - https://molv1659.github.io/cdn/cover/(3).jpg
-  - https://molv1659.github.io/cdn/cover/(4).PNG
-  - https://molv1659.github.io/cdn/cover/(5).png
-  - https://molv1659.github.io/cdn/cover/(6).PNG
+  - https://molv1659.github.io/cdn/main-cover/(1).PNG
+  - https://molv1659.github.io/cdn/main-cover/(2).JPG
+  - https://molv1659.github.io/cdn/main-cover/(3).jpg
+  - https://molv1659.github.io/cdn/main-cover/(4).PNG
+  - https://molv1659.github.io/cdn/main-cover/(5).png
+  - https://molv1659.github.io/cdn/main-cover/(6).PNG
 
 # 背景图片样式 空 原图效果 filter-dim 阴影 filter-grid 横条 filter-dot 点点
 bgclass: 
 
 # # startdash url, title, desc img
 startdash: 
-  - {url: https://www.hojun.cn/2019/02/20/cknemlo4n006luwtuaq85f0x1/, title: Sakura, desc: 本站 hexo 主题, img: /cover/sakura-theme.jpeg}
-  - {url: https://space.bilibili.com/148095158, title: Bilibili, desc: 我的b站, img: /cover/bilibili.jpeg}
-  - {url: /, title: 主页, desc: 最主的主页2333, img: /cover/home.png}
+  - {url: https://www.hojun.cn/2019/02/20/cknemlo4n006luwtuaq85f0x1/, title: Sakura, desc: 本站 hexo 主题, img: /main-cover/sakura-theme.jpeg}
+  - {url: https://space.bilibili.com/148095158, title: Bilibili, desc: 我的b站, img: /main-cover/bilibili.jpeg}
+  - {url: /, title: 主页, desc: 最主的主页2333, img: /main-cover/home.png}
 
 
 
