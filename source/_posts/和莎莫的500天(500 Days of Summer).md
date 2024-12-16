@@ -1,12 +1,12 @@
 ---
 title: 和莎莫的500天(500 Days of Summer)
 date: 2021/03/12
-photos: https://molv1659.github.io/cdn/article-cover/2.JPG
+photos: https://www.sisicheng.com/cdn/article-cover/2.JPG
 categories: 男子大学生の日常
-avatar: https://molv1659.github.io/cdn/kirito1.jpg
+avatar: https://www.sisicheng.com/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
----
 permalink: 500-days-of-summer
+---
 
 上学期选了一门”亲密关系：爱情，婚姻与心理学“的课，期末作业写了个影评，想着写了就干脆挂上来8。是一个看完很有感触的电影呢，但其实影评迫于课程要求很多最真实的感想是没有写下来的，不过也不想与人分享这些悲伤的想法就是了。
 

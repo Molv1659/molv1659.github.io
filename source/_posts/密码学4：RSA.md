@@ -1,9 +1,9 @@
 ---
 title: 密码学4：RSA
 date: 2021/03/07
-photos: https://molv1659.github.io/cdn/article-cover/7.JPG
+photos: https://www.sisicheng.com/cdn/article-cover/7.JPG
 categories: 砂糖实验室
-avatar: https://molv1659.github.io/cdn/kirito1.jpg
+avatar: https://www.sisicheng.com/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
 ---
 permalink: rsa

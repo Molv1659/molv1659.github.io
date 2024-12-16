@@ -1,9 +1,9 @@
 ---
 title: 网站接踵而来的第二次长征
 date: 2022/01/03
-photos: https://molv1659.github.io/cdn/article-cover/18.JPG
+photos: https://www.sisicheng.com/cdn/article-cover/18.JPG
 categories: 砂糖实验室
-avatar: https://molv1659.github.io/cdn/kirito1.jpg
+avatar: https://www.sisicheng.com/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
 ---
 在服务器上跑了一个Travel Story的express app，监听3000端口，然后防火墙设置80端口号打开，nginx设置80端口转到3000端口代理。这个是想写简历的项目，就搭了RESTful的API，前端试了下Bootstrap5，后端是Nodejs和express，然后数据库试了下非关系型数据库的MongoDB。上学期上了数据库原理，对关系型数据库的运行相当了解了，对非关系型数据库还挺好奇2333 。但是下学期不敢选CSE232B了，用Java手撸一个非关系型数据库parser想想就头大，感觉还是会用就行，不想仔细了解了，而且这学期Haskell写对代码计算的Parser，人都写麻了，太废脑子了，人老了，脑子要省着点用23333
