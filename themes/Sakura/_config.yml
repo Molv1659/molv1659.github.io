@@ -70,8 +70,8 @@ startdash:
 siteBuildingTime: 01/21/2020
 
 #social  url, img PC端配置
-social:
-  github: {url: http://github.com/Molv1659, img: /social/github.png}
+# social:
+#   github: {url: http://github.com/Molv1659, img: /social/github.png}
 #   sina: {url: http://weibo.com/mashirozx?is_all=1, img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png}
 #   wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png}
 #   zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png}
