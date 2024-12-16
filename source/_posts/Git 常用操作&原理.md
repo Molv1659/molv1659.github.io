@@ -1,9 +1,9 @@
 ---
 title: Git 常用操作&原理
 date: 2021/05/09
-photos: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/article-cover/17.JPG
+photos: https://molv1659.github.io/cdn/article-cover/17.JPG
 categories: 砂糖实验室
-avatar: https://github.com/Molv1659/molv1659.github.io/tree/main/cdn/kirito1.jpg
+avatar: https://molv1659.github.io/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
 ---
 permalink: git
