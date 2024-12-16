@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">冬のWorld</title>
+  <title itemprop="name">远程控制 | 冬のWorld</title>
   
     <link rel="shortcut icon" href="https://www.sisicheng.com/cdn/WA2.ico">
   
@@ -254,467 +254,149 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://www.sisicheng.com/cdn/article-cover/16.PNG);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/16.PNG">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      远程控制</h1>
+      <p class="entry-census">
+        <span>
+          <a href="http://www.sisicheng.com">
+            <img src="https://www.sisicheng.com/cdn/kirito1.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="http://www.sisicheng.com"></a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-2-3<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  START:DASH!!</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://www.hojun.cn/2019/02/20/cknemlo4n006luwtuaq85f0x1/" target="_blank">
-        <div class="img">
-          <img src="https://www.sisicheng.com/cdn/main-cover/sakura-theme.jpeg">
-        </div>
-        <div class="info">
-          <h3>Sakura</h3>
-          <p>本站 hexo 主题</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="https://space.bilibili.com/148095158" target="_blank">
-        <div class="img">
-          <img src="https://www.sisicheng.com/cdn/main-cover/bilibili.jpeg">
-        </div>
-        <div class="info">
-          <h3>Bilibili</h3>
-          <p>我的b站</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="/" target="_blank">
-        <div class="img">
-          <img src="https://www.sisicheng.com/cdn/main-cover/home.png">
-        </div>
-        <div class="info">
-          <h3>主页</h3>
-          <p>最主的主页2333</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-</div>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      Discovery</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>之前看到林亦用streaming技术，实现了在ipad上玩刺客信条（就是计算由他的主机去跑，然后结果传给ipad，这样pad只需要做视频解码与显示就行），很是羡慕，想起了之前想干没干好的事儿23333</p>
+<p><strong>在pad上玩</strong></p>
+<p><strong>白色相簿2</strong></p>
+<p>以前试过用向日葵这个软件远程控制，发现真是辣鸡，瞎动我电脑的设置，给它卸载了还整了半天才调回去 ￣︿￣ 。微软自带的远程控制要win10专业版及以上才行，我的笔记本是家庭版，所以之前就一直咕咕了。</p>
+<h1 id="家里wifi环境"><a href="#家里wifi环境" class="headerlink" title="家里wifi环境"></a>家里wifi环境</h1><p>这次回家装的台式机是win10专业版，首先在家里的内网调通了远程控制。首先当然是自己的电脑把允许远程控制桌面打开，在ipad上把微软远程控制的app下载好。</p>
+<p>windows键+R，然后cmd进入小黑窗，用ipconfig查看相关信息：</p>
+<p><img src="image6.png" alt="img"></p>
+<p>IPv4地址就是这台电脑在家庭wifi环境内的IP地址，比如你的手机连的家里wifi，那看你的电脑就是这个192.168.0.100的地址。注意，这只是在内网环境中，如果你手机是用自己的移动流量，那么你的手机既无法将这个ip认作你的电脑。</p>
+<p>然后用pad上微软远程控制app去连接电脑的时候，要输入的“电脑名称”项输入这个ip就好。因为我主机是直接用网线接在路由器上的，所以这个IP地址是定的，如果像笔记本什么的无线网连wifi，分的内网ip可能会变，所以也可以用“主机名”而不是刚查的这个ip地址来连接。</p>
+<p>上面小黑窗中看到默认网关192.168.0.1，将其直接输入在浏览器，就可以以路由器管理员身份进入（忘记密码的可以牙签戳路由器的reset键5秒来重置密码），进入后有设备管理界面：</p>
+<p><img src="image-1-1024x576.png" alt="img"></p>
+<p>这里可以看到自己各个设备的名称。所以ipad的app上“电脑名称”输入那个WIN开头的就也可以。连接时还会要求输入用户和密码，之前一直不清楚，这次稍微研究了下：</p>
+<p>像自己的笔记本是拿微软账号登陆的（就是刚买电脑时用qq邮箱注册的那个）然后开机密码或者pin也是那个微软账号的，同时这个微软账号（或将之称之为一个用户）是拥有我笔记本的管理员权限的。</p>
+<p>而新装的台式机，就没有密码直接登陆，这时候就是以本地账户登入的，这个本地账户就是管理员Administrator。因为本地账户是管理员，所以可以增加这个台式机的用户，并决定是否给他们管理员权限等等。用pad远程控制电脑时，我就直接用这个Administrator用户身份登入了。（但必须给Administrator用户设置密码，否则ipad的app上会登陆失败）也可以按网上教程说的在Win10用户管理处增加新账户，但其实没必要。</p>
+<p>至此，我已经可以躺沙发上用ipad玩白色相簿2了233333</p>
+<h1 id="外部网络环境"><a href="#外部网络环境" class="headerlink" title="外部网络环境"></a>外部网络环境</h1><p>举个例子，我想在学校控制家里的台式机跑个程序，这时就是从外部网络环境进行的远程控制。既然是远程网络，那当然之前看的192.168.0.100（内网ip）这个地址对于我在学校的电子设备就是一个没有意义的地址。我在学校，需要知道自家电脑的公网ip。</p>
+<p>在家里台式机上：</p>
+<p>首先通过（比如bing）搜索“我的ip”可以看到一个ip地址：</p>
+<p><img src="image-2-1024x576.png" alt="img"></p>
+<p>然后刚才通过192.168.0.1进入的路由器管理员界面，查看ip地址：</p>
+<p><img src="image-3-1024x576.png" alt="img"></p>
+<p>发现两个ip地址不一样。这 河 里 吗？这不合理a   说明宽带运营商没有给我分公网ip，我家的路由器还是在一个更大的内网里，需要通过其他的设备才能接触到外面的InterNet。于是打电话去问，说移动的只有企业申请才能分配公网ip，去贴吧什么的瞅瞅，发现移动的一直在分公网ip很抠，电信联通还挺好说话，一般要公网ip多磨磨还是会给你的。</p>
+<p>没公网ip，我这次的外部网络远程控制直接凉凉，不过还是要讲讲1.有公网ip的话怎么做 2.没有ipv4公网ip时可能的解决办法：</p>
+<p>1.有公网ip（我们假设为117.153.22.22），那么下一步操作就是设置路由器端口转移，将路由器 IP 地址（公网 IP）上的端口映射到要访问的电脑的端口和 IP 地址（比如我这个台式机就是192.168.0.100，远程控制端口号一般为3389，只要你没瞎搞过就是这个了）。</p>
+<p>打个比方，公网ip地址就是“北京市海淀区”，内网里你的ip就是“前进路”，端口号就是“前进路的快递代收点地址”，你想从上海寄个东西过去，光说前进路，全国那么多前进路谁知道送哪呢？所以这个前进路就没有意义，要知道“北京市海淀区”后前进路才有意义。端口转移干的事儿就是：寄到北京市海淀区的东西，它再看看是自己内部哪个ip的，下发过去。</p>
+<p>2.ipv6就是为了应对ipv4不够用的问题才出现的嘛，那当然是多的用不完，办宽带的时候虽然没ipv4公网地址，但一定分了ipv6公网地址，理论上也是可以用ipv6地址实现内网穿透的，让我能从外部把我家主机从ipv4大内网的泥沼中给滴拉出来的。</p>
+<p>不过我太懒了，不想一次搞这么多了，以后有缘再处理（〃｀ 3′〃）</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2021/zalegoto/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/category/zalegoto.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://www.sisicheng.com/cdn/category/zalegoto.jpeg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                蓝色学者与戏言跟班</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/pay-for-experience/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/1.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://www.sisicheng.com/cdn/article-cover/1.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                $750换来的教训</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "FpmoJ9C0hDlLHEIVqcHCTSo4-gzGzoHsz",
+        appKey: "hKq1YUOQGJvqrvQnT63ldkR6",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-  <div class="post-thumb">
-    <a href="/2024/test_files/imageTransform3D/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2024-12-15 14:12</div>
-      <a href="/2024/test_files/imageTransform3D/" class="post-title">
-        <h3></h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2024/test_files/imageTransform3D/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="http://www.sisicheng.com" class="profile gravatar"><img src="https://www.sisicheng.com/cdn/kirito1.jpg" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="http://www.sisicheng.com" itemprop="url" rel="author"></a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2024/test_files/ge1doot/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2024-12-15 14:12</div>
-      <a href="/2024/test_files/ge1doot/" class="post-title">
-        <h3></h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2024/test_files/ge1doot/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2022/webmove2/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/18.JPG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2022-1-3 00:01</div>
-      <a href="/2022/webmove2/" class="post-title">
-        <h3>网站接踵而来的第二次长征</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/砂糖实验室/">砂糖实验室</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2022/webmove2/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/web-move/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/12.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-12-16 00:12</div>
-      <a href="/2021/web-move/" class="post-title">
-        <h3>网站第一次长征完成</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/砂糖实验室/">砂糖实验室</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/web-move/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/git/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/17.JPG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-5-9 00:05</div>
-      <a href="/2021/git/" class="post-title">
-        <h3>Git 常用操作&amp;原理</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/砂糖实验室/">砂糖实验室</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/git/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/students-day/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/10.PNG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-3-21 00:03</div>
-      <a href="/2021/students-day/" class="post-title">
-        <h3>清华园里的最后一个学生节</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/男子大学生の日常/">男子大学生の日常</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/students-day/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/develop-speed/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/9.PNG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-3-13 00:03</div>
-      <a href="/2021/develop-speed/" class="post-title">
-        <h3>枪炮，病菌与钢铁</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/男子大学生の日常/">男子大学生の日常</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/develop-speed/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/rainy-love/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/13.jpeg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-3-12 00:03</div>
-      <a href="/2021/rainy-love/" class="post-title">
-        <h3>一点下雨天的胡思乱想</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/戏言/">戏言</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/rainy-love/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/500-days-of-summer/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/2.JPG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-3-12 00:03</div>
-      <a href="/2021/500-days-of-summer/" class="post-title">
-        <h3>和莎莫的500天(500 Days of Summer)</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/男子大学生の日常/">男子大学生の日常</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/500-days-of-summer/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="https://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2021/lottery2333/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://www.sisicheng.com/cdn/article-cover/11.JPG">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2021-3-12 00:03</div>
-      <a href="/2021/lottery2333/" class="post-title">
-        <h3>申请结果记录</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/男子大学生の日常/">男子大学生の日常</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2021/lottery2333/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-right"></i></a>
-      </nav>
-     -->
-  </div>
-  
-    <div id="pagination"><a href="/page/2/" class="">Previous</a></div>
-  
+        <hr>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

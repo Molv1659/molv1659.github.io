@@ -43,29 +43,6 @@
   
   <entry>
     <title></title>
-    <link href="https://www.sisicheng.com/2024/hualang/"/>
-    <id>https://www.sisicheng.com/2024/hualang/</id>
-    <published>2024-12-15T22:51:10.725Z</published>
-    <updated>2024-12-15T22:51:10.725Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-&lt;!-- saved from
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="https://www.sisicheng.com/2024/test_files/ge1doot/"/>
     <id>https://www.sisicheng.com/2024/test_files/ge1doot/</id>
     <published>2024-12-15T22:51:10.725Z</published>
@@ -114,10 +91,10 @@
   
   <entry>
     <title>网站第一次长征完成</title>
-    <link href="https://www.sisicheng.com/2021/%E7%BD%91%E7%AB%99%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%95%BF%E5%BE%81%E5%AE%8C%E6%88%90/"/>
-    <id>https://www.sisicheng.com/2021/网站第一次长征完成/</id>
+    <link href="https://www.sisicheng.com/2021/web-move/"/>
+    <id>https://www.sisicheng.com/2021/web-move/</id>
     <published>2021-12-16T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.234Z</updated>
+    <updated>2024-12-16T00:32:03.916Z</updated>
     
     <summary type="html">
     
@@ -125,7 +102,8 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;SugarHost主机之前租了一年，价格有点不划算，而且功能不是独立OS，之前就只是当个WordPress和FTP服务器用，现在换到CloudCone家的主机了，它家网页好好看！&lt;/p&gt;
+&lt;p&gt;不过只有ssh了，连FTP都要自己装，在CentOS 6.5和CentOS
         
       
     
@@ -138,10 +116,10 @@
   
   <entry>
     <title>Git 常用操作&amp;原理</title>
-    <link href="https://www.sisicheng.com/2021/Git%20%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C&amp;%E5%8E%9F%E7%90%86/"/>
-    <id>https://www.sisicheng.com/2021/Git 常用操作&amp;原理/</id>
+    <link href="https://www.sisicheng.com/2021/git/"/>
+    <id>https://www.sisicheng.com/2021/git/</id>
     <published>2021-05-09T07:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:34:11.426Z</updated>
     
     <summary type="html">
     
@@ -149,9 +127,8 @@
       
         
         
-          &lt;p&gt;permalink: git&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;git-1024x707.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
-&lt;p&gt;图来自 &lt;a href=&quot;https://www.bilibili.com/video/BV1ni4y1t7jK&quot;
+          &lt;p&gt;&lt;img src=&quot;git-1024x707.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;图来自 &lt;a href=&quot;https://www.bilibili.com/video/BV1ni4y1t7jK&quot; target=&quot;_blank&quot;
         
       
     
@@ -164,10 +141,10 @@
   
   <entry>
     <title>清华园里的最后一个学生节</title>
-    <link href="https://www.sisicheng.com/2021/%E6%B8%85%E5%8D%8E%E5%9B%AD%E9%87%8C%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%AD%A6%E7%94%9F%E8%8A%82/"/>
-    <id>https://www.sisicheng.com/2021/清华园里的最后一个学生节/</id>
+    <link href="https://www.sisicheng.com/2021/students-day/"/>
+    <id>https://www.sisicheng.com/2021/students-day/</id>
     <published>2021-03-21T07:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.124Z</updated>
+    <updated>2024-12-16T00:31:53.521Z</updated>
     
     <summary type="html">
     
@@ -175,7 +152,8 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;大学四年总共看了三次自己系的学生节，大三时候太忙了没看，这次是最后一次了。带着过大的期望去看，有点失望。&lt;/p&gt;
+&lt;p&gt;大一第一次看学生节，还充满着对大学四年未知的好奇，看完学生节很有感触，觉得大学四年应该追求精彩的生活而不是绩点与奖项，看完回去把那些不怎么感兴趣但听说给分
         
       
     
@@ -188,10 +166,10 @@
   
   <entry>
     <title>枪炮，病菌与钢铁</title>
-    <link href="https://www.sisicheng.com/2021/%E6%9E%AA%E7%82%AE%EF%BC%8C%E7%97%85%E8%8F%8C%E4%B8%8E%E9%92%A2%E9%93%81/"/>
-    <id>https://www.sisicheng.com/2021/枪炮，病菌与钢铁/</id>
+    <link href="https://www.sisicheng.com/2021/develop-speed/"/>
+    <id>https://www.sisicheng.com/2021/develop-speed/</id>
     <published>2021-03-13T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.161Z</updated>
+    <updated>2024-12-16T00:31:47.764Z</updated>
     
     <summary type="html">
     
@@ -199,13 +177,39 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;寒假就带回家看了，但是到最近才把这本书看完。怎么说，总有点读GRE阅读的感觉，完全读不快，否则就容易逻辑理不顺了，走马观花地看的话就是那种读完完全不知道读了什么的感觉。Anyway，好好读完了。&lt;/p&gt;
+&lt;h1 id=&quot;书名的起源&quot;&gt;&lt;a href=&quot;#书名的起源&quot;
         
       
     
     </summary>
     
       <category term="男子大学生の日常" scheme="https://www.sisicheng.com/categories/%E7%94%B7%E5%AD%90%E5%A4%A7%E5%AD%A6%E7%94%9F%E3%81%AE%E6%97%A5%E5%B8%B8/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一点下雨天的胡思乱想</title>
+    <link href="https://www.sisicheng.com/2021/rainy-love/"/>
+    <id>https://www.sisicheng.com/2021/rainy-love/</id>
+    <published>2021-03-12T08:00:00.000Z</published>
+    <updated>2024-12-16T00:32:08.316Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;北京难得下雨了，空气很好，总想出门看看，就从寝室到图书馆了&lt;/p&gt;
+&lt;p&gt;处理完一些活，在一亩三分地上瞎逛，看到这个贴子 &lt;a href=&quot;https://www.1point3acres.com/bbs/thread-729684-1-1.html&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="戏言" scheme="https://www.sisicheng.com/categories/%E6%88%8F%E8%A8%80/"/>
     
     
   </entry>
@@ -236,36 +240,11 @@
   </entry>
   
   <entry>
-    <title>一点下雨天的胡思乱想</title>
-    <link href="https://www.sisicheng.com/2021/%E4%B8%80%E7%82%B9%E4%B8%8B%E9%9B%A8%E5%A4%A9%E7%9A%84%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    <id>https://www.sisicheng.com/2021/一点下雨天的胡思乱想/</id>
-    <published>2021-03-12T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;permalink: rainy-love&lt;br&gt;北京难得下雨了，空气很好，总想出门看看，就从寝室到图书馆了&lt;/p&gt;
-&lt;p&gt;处理完一些活，在一亩三分地上瞎逛，看到这个贴子 &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="戏言" scheme="https://www.sisicheng.com/categories/%E6%88%8F%E8%A8%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>申请结果记录</title>
-    <link href="https://www.sisicheng.com/2021/%E7%94%B3%E8%AF%B7%E7%BB%93%E6%9E%9C%E8%AE%B0%E5%BD%95/"/>
-    <id>https://www.sisicheng.com/2021/申请结果记录/</id>
+    <link href="https://www.sisicheng.com/2021/lottery2333/"/>
+    <id>https://www.sisicheng.com/2021/lottery2333/</id>
     <published>2021-03-12T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.161Z</updated>
+    <updated>2024-12-16T00:31:57.747Z</updated>
     
     <summary type="html">
     
@@ -273,9 +252,9 @@
       
         
         
-          &lt;p&gt;permalink: lottery2333&lt;br&gt;记一下流水账吧，要是最好喜欢的学校发录取了就好好总结下申请，多写点还可以做个视频什么的啊😎，要是不太满意的话就只有这个流水账了😒&lt;/p&gt;
+          &lt;p&gt;记一下流水账吧，要是最好喜欢的学校发录取了就好好总结下申请，多写点还可以做个视频什么的啊😎，要是不太满意的话就只有这个流水账了😒&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;2021.01.16 1st AD MSCS @
+&lt;li&gt;&lt;p&gt;2021.01.16 1st AD MSCS @ NEU 
         
       
     
@@ -288,10 +267,10 @@
   
   <entry>
     <title>密码学4：RSA</title>
-    <link href="https://www.sisicheng.com/2021/%E5%AF%86%E7%A0%81%E5%AD%A64%EF%BC%9ARSA/"/>
-    <id>https://www.sisicheng.com/2021/密码学4：RSA/</id>
+    <link href="https://www.sisicheng.com/2021/rsa/"/>
+    <id>https://www.sisicheng.com/2021/rsa/</id>
     <published>2021-03-07T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:31:37.421Z</updated>
     
     <summary type="html">
     
@@ -299,7 +278,8 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;目前大家经常看到并容易使用的加密算法就是这个了，之前说的非对称密钥系统中，公钥加密私钥解密，私钥加密公钥解密的特性，想起来就蛮神奇的，好奇怎么实现这一特点的，下面这个视频讲得很清楚，我就不写了23333，直接导过去：&lt;/p&gt;
+&lt;iframe
         
       
     
@@ -312,10 +292,10 @@
   
   <entry>
     <title>密码学3：收到的密文是否被篡改？</title>
-    <link href="https://www.sisicheng.com/2021/%E5%AF%86%E7%A0%81%E5%AD%A63%EF%BC%9A%E6%94%B6%E5%88%B0%E7%9A%84%E5%AF%86%E6%96%87%E6%98%AF%E5%90%A6%E8%A2%AB%E7%AF%A1%E6%94%B9%EF%BC%9F/"/>
-    <id>https://www.sisicheng.com/2021/密码学3：收到的密文是否被篡改？/</id>
+    <link href="https://www.sisicheng.com/2021/hash/"/>
+    <id>https://www.sisicheng.com/2021/hash/</id>
     <published>2021-02-26T09:01:03.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:31:32.019Z</updated>
     
     <summary type="html">
     
@@ -323,7 +303,8 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;前面已讲了加密通信的机密性和端点鉴别，这期讲讲怎么保证密文完整性，即你收到了友人A发过来的密文，虽然你知道黑客截下来也看不懂，但你怎么知道这个密文是不是被黑客改过的呢？&lt;/p&gt;
+&lt;p&gt;机智的小伙伴已经想到了，还是数字签名那期的方法呗，友人A发送密文内容为f_public_y
         
       
     
@@ -336,10 +317,10 @@
   
   <entry>
     <title>密码学2：数字签名</title>
-    <link href="https://www.sisicheng.com/2021/%E5%AF%86%E7%A0%81%E5%AD%A62%EF%BC%9A%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/"/>
-    <id>https://www.sisicheng.com/2021/密码学2：数字签名/</id>
+    <link href="https://www.sisicheng.com/2021/digital-signature/"/>
+    <id>https://www.sisicheng.com/2021/digital-signature/</id>
     <published>2021-02-26T09:01:02.000Z</published>
-    <updated>2024-12-16T00:25:10.161Z</updated>
+    <updated>2024-12-16T00:31:22.737Z</updated>
     
     <summary type="html">
     
@@ -347,7 +328,9 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;这期讲数字签名如何用来端点鉴别，用Hash函数的保证完整性的数字签名下期讲。&lt;/p&gt;
+&lt;p&gt;现实中的签名作用大家都清楚，但数字签名怎么签呢？&lt;/p&gt;
+&lt;p&gt;比如我登录bilibili是要输入账号和密码的，我怎么知道我没有打开一个盗版的长的和bilibili几乎一样的网站呢？
         
       
     
@@ -360,10 +343,10 @@
   
   <entry>
     <title>密码学1：私钥和公钥</title>
-    <link href="https://www.sisicheng.com/2021/%E5%AF%86%E7%A0%81%E5%AD%A61%EF%BC%9A%E7%A7%81%E9%92%A5%E5%92%8C%E5%85%AC%E9%92%A5/"/>
-    <id>https://www.sisicheng.com/2021/密码学1：私钥和公钥/</id>
+    <link href="https://www.sisicheng.com/2021/keys/"/>
+    <id>https://www.sisicheng.com/2021/keys/</id>
     <published>2021-02-26T09:01:01.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:31:17.498Z</updated>
     
     <summary type="html">
     
@@ -371,7 +354,10 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;之前常常看到别人说私钥公钥，但是其加密解密的用法似乎非常混乱：“用私钥加密blabla”“用私钥解密blabla”之前看的就很迷，咋又能加密又能解密，加密用的东西叫钥匙🔑？于是学习了一下。&lt;/p&gt;
+&lt;p&gt;首先加密通信的目的需要了解下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;机密性：只
         
       
     
@@ -384,10 +370,10 @@
   
   <entry>
     <title>有点寂寞</title>
-    <link href="https://www.sisicheng.com/2021/%E6%9C%89%E7%82%B9%E5%AF%82%E5%AF%9E/"/>
-    <id>https://www.sisicheng.com/2021/有点寂寞/</id>
+    <link href="https://www.sisicheng.com/2021/sabishi/"/>
+    <id>https://www.sisicheng.com/2021/sabishi/</id>
     <published>2021-02-16T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.123Z</updated>
+    <updated>2024-12-16T00:32:13.796Z</updated>
     
     <summary type="html">
     
@@ -395,7 +381,7 @@
       
         
         
-          &lt;p&gt;permalink: sabishi&lt;br&gt;过年走亲戚，总是傻坐着，无聊&lt;/p&gt;
+          &lt;p&gt;过年走亲戚，总是傻坐着，无聊&lt;/p&gt;
 &lt;p&gt;下午以拿核酸检测结果为由溜了，骑车在桥上&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;微信图片_20210216173954-1024x768.png&quot;
         
@@ -410,10 +396,10 @@
   
   <entry>
     <title>蓝色学者与戏言跟班</title>
-    <link href="https://www.sisicheng.com/2021/%E8%93%9D%E8%89%B2%E5%AD%A6%E8%80%85%E4%B8%8E%E6%88%8F%E8%A8%80%E8%B7%9F%E7%8F%AD/"/>
-    <id>https://www.sisicheng.com/2021/蓝色学者与戏言跟班/</id>
+    <link href="https://www.sisicheng.com/2021/zalegoto/"/>
+    <id>https://www.sisicheng.com/2021/zalegoto/</id>
     <published>2021-02-09T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:31:11.951Z</updated>
     
     <summary type="html">
     
@@ -421,10 +407,10 @@
       
         
         
-          &lt;p&gt;permalink: zalegoto&lt;/p&gt;
-&lt;p&gt;这是本栏目名字的由来。&lt;/p&gt;
+          &lt;p&gt;这是本栏目名字的由来。&lt;/p&gt;
 &lt;p&gt;「能够自觉性、意识性地将别人当作踏脚石的人,实在是相当可怕哪。」&lt;/p&gt;
 &lt;p&gt;  会吗?&lt;/p&gt;
+&lt;p&gt;  我倒认为不自觉、潜意识地将别人当作踏脚石,藉善意和正义来践踏他人的人更加恐怖。&lt;/p&gt;
 &lt;p&gt; 
         
       
@@ -438,10 +424,10 @@
   
   <entry>
     <title>远程控制</title>
-    <link href="https://www.sisicheng.com/2021/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/"/>
-    <id>https://www.sisicheng.com/2021/远程控制/</id>
+    <link href="https://www.sisicheng.com/2021/remote-control/"/>
+    <id>https://www.sisicheng.com/2021/remote-control/</id>
     <published>2021-02-03T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:34:13.071Z</updated>
     
     <summary type="html">
     
@@ -449,7 +435,9 @@
       
         
         
-          &lt;p&gt;permalink:
+          &lt;p&gt;之前看到林亦用streaming技术，实现了在ipad上玩刺客信条（就是计算由他的主机去跑，然后结果传给ipad，这样pad只需要做视频解码与显示就行），很是羡慕，想起了之前想干没干好的事儿23333&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在pad上玩&lt;/strong&gt;&lt;/p&gt;
+&lt;
         
       
     
@@ -487,10 +475,10 @@
   
   <entry>
     <title>普通的一天</title>
-    <link href="https://www.sisicheng.com/2021/%E6%99%AE%E9%80%9A%E7%9A%84%E4%B8%80%E5%A4%A9/"/>
-    <id>https://www.sisicheng.com/2021/普通的一天/</id>
+    <link href="https://www.sisicheng.com/2021/nichijo20210130/"/>
+    <id>https://www.sisicheng.com/2021/nichijo20210130/</id>
     <published>2021-01-30T08:00:00.000Z</published>
-    <updated>2024-12-16T00:25:10.216Z</updated>
+    <updated>2024-12-16T00:31:42.071Z</updated>
     
     <summary type="html">
     
@@ -498,15 +486,39 @@
       
         
         
-          &lt;p&gt;permalink: nichijo20210130&lt;br&gt;寒假直接睡到中午，下午摸摸吉他，晚上熬夜打游戏的日子过去几天了，相当的嗨皮~(￣▽￣)~*&lt;/p&gt;
+          &lt;p&gt;寒假直接睡到中午，下午摸摸吉他，晚上熬夜打游戏的日子过去几天了，相当的嗨皮~(￣▽￣)~*&lt;/p&gt;
 &lt;p&gt;给自己的网页加了个雪花的图标，嘿嘿&lt;/p&gt;
-&lt;p&gt;看别人的网站做的好厉害！这个 &lt;a
+&lt;p&gt;看别人的网站做的好厉害！这个 &lt;a href=&quot;https://2heng.xin/theme-sakura/&quot;
         
       
     
     </summary>
     
       <category term="男子大学生の日常" scheme="https://www.sisicheng.com/categories/%E7%94%B7%E5%AD%90%E5%A4%A7%E5%AD%A6%E7%94%9F%E3%81%AE%E6%97%A5%E5%B8%B8/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>有一个自己的网站啦！</title>
+    <link href="https://www.sisicheng.com/2021/hello-world/"/>
+    <id>https://www.sisicheng.com/2021/hello-world/</id>
+    <published>2021-01-21T08:00:00.000Z</published>
+    <updated>2024-12-16T00:32:18.653Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在自动化系忙了三年，软硬件技术原理都学了不少，但感觉真正好玩能用上的真不多233333
+        
+      
+    
+    </summary>
+    
+      <category term="砂糖实验室" scheme="https://www.sisicheng.com/categories/%E7%A0%82%E7%B3%96%E5%AE%9E%E9%AA%8C%E5%AE%A4/"/>
     
     
   </entry>
