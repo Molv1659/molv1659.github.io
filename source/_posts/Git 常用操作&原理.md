@@ -5,8 +5,8 @@ photos: https://www.sisicheng.com/cdn/article-cover/17.JPG
 categories: 砂糖实验室
 avatar: https://www.sisicheng.com/cdn/kirito1.jpg
 authorLink: http://www.sisicheng.com
----
 permalink: git
+---
 
 ![img](git-1024x707.png)
 
