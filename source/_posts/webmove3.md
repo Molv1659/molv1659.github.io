@@ -14,6 +14,6 @@ authorLink: http://www.sisicheng.com
 - sisicheng.com apex domain add A record to github pages server IPs
 - www.sisischeng.com CNAME record to molv1659.github.io
 - add source/CNAME file with www.sisicheng.com
-- hexo deploy to gh-pages branches
+- hexo deploy to gh-pages branch
 - add npm update cmd that handles git and hexo
 - adjust cdn dir
