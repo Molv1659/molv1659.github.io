@@ -301,7 +301,7 @@ ge1doot.transform3D.Image.prototype.transform3D = function (backfaceTest) {
 			return (
 				((p1.Y - p0.Y) / (p1.X - p0.X) - 
 				(p2.Y - p0.Y) / (p2.X - p0.X) < 0) ^ 
-				(p0.X <= p1.x="=" p0.x> p2.X)
+				(p0.X <= p1.X == p0.X > p2.X)
 			);
 		} else return true;
 	}
@@ -320,4 +320,4 @@ ge1doot.transform3D.Image.prototype.draw = function () {
 ge1doot.transform3D.Image.prototype.isPointerInside = function (x, y) {
 	this.drawPoly(this.points);
 	return this.ctx.isPointInPath(x, y);
-}</=>
+}
