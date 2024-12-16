@@ -21,14 +21,14 @@ menus:
     戏言: {path: /categories/戏言/, fa: fa-ravelry}, 
     男子大学生の日常: {path: /categories/男子大学生の日常/, fa: fa-user-circle-o }, 
     砂糖实验室: {path: /categories/砂糖实验室/, fa: fa-flask}, 
+    影评: {path: /categories/影评/, fa: fa-film}
   } }
   清单: { path: javascript:;, fa: fa-list-ul faa-vertical, submenus: { 
     番组: {path: /bangumi/, fa: fa-heart }, 
     歌单: {path: /music/, fa: fa-headphones },
-    影评: {path: /categories/影评/, fa: fa-film}
   } }
   时间线: {path: /archives, fa: fa-calendar-check-o faa-shake}
-  留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
+  画廊: { path: /hualang/, fa: fa-picture-o }
   # 友人帐: { path: /links/, fa: fa-link faa-shake }
   # # 赞赏: { path: /donate/, fa: fa-heart faa-pulse }
   # 关于: { path: /, fa: fa-leaf faa-wrench , submenus: { 
