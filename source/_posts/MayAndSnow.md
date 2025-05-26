@@ -24,11 +24,15 @@ permalink: may-and-snow
 
 接下来的一周也没有心情去处理NIW的事情，便即兴买了去Seattle的机票，去找朋友们玩。本是想周六爬Rainier，但是天气预报是下雨雷暴，于是改到了周日一大早去爬，天气预报在雨和雪中变化，rainier广大的区域让我对准确的区域性天气预报情况无从下手，带着忐忑的心，还是定下了行程。结果，❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️
 
-<video src="20250518_142959.mp4"></video>
+<div style="width: 100%; max-width: 100%; padding: 20px 0; text-align: center;">
+  <video src="20250518_142959.mp4" controls style="width: 100%; max-width: 800px; height: 450px;"></video>
+</div>
 
 不知是隔了十几年的再一次打滚
 
-<video src="PXL_20250518_205246366.mp4"></video>
+<div style="width: 100%; max-width: 100%; padding: 20px 0; text-align: center;">
+  <video src="PXL_20250518_205246366.mp4" controls style="width: 100%; max-width: 800px; height: 450px;"></video>
+</div>
 
 躺躺躺
 
