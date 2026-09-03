@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sisicheng.com/"/>
-  <updated>2025-05-26T00:03:58.008Z</updated>
+  <updated>2026-09-03T04:08:25.858Z</updated>
   <id>https://www.sisicheng.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试要考 AI coding 了</title>
+    <link href="https://www.sisicheng.com/2026/ai-coding-interview/"/>
+    <id>https://www.sisicheng.com/2026/ai-coding-interview/</id>
+    <published>2026-09-02T07:00:00.000Z</published>
+    <updated>2026-09-03T04:08:25.858Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在找工作，发现现在有些公司面试直接让你开 AI 编辑器现场写，美其名曰 “AI-assisted coding”。行吧，那就提前把本地环境备好，免得面试的时候在那 &lt;code&gt;nvm install&lt;/code&gt; 干等着 2333。&lt;/p&gt;
+&lt;p&gt;于是让 Claude
+        
+      
+    
+    </summary>
+    
+      <category term="砂糖实验室" scheme="https://www.sisicheng.com/categories/%E7%A0%82%E7%B3%96%E5%AE%9E%E9%AA%8C%E5%AE%A4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>May &amp; Snow</title>
@@ -488,32 +513,6 @@
         
           &lt;p&gt;NEU个老坑逼，居然要求01.31前决定然后交占位费，相当不情愿，一个超级大保底，来骗，来偷袭，哼(* ￣︿￣)&lt;/p&gt;
 &lt;p&gt;然后昨天逛一亩三分地才知道可以有申请extending tuition deposit
-        
-      
-    
-    </summary>
-    
-      <category term="男子大学生の日常" scheme="https://www.sisicheng.com/categories/%E7%94%B7%E5%AD%90%E5%A4%A7%E5%AD%A6%E7%94%9F%E3%81%AE%E6%97%A5%E5%B8%B8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>普通的一天</title>
-    <link href="https://www.sisicheng.com/2021/nichijo20210130/"/>
-    <id>https://www.sisicheng.com/2021/nichijo20210130/</id>
-    <published>2021-01-30T08:00:00.000Z</published>
-    <updated>2024-12-16T00:31:42.071Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;寒假直接睡到中午，下午摸摸吉他，晚上熬夜打游戏的日子过去几天了，相当的嗨皮~(￣▽￣)~*&lt;/p&gt;
-&lt;p&gt;给自己的网页加了个雪花的图标，嘿嘿&lt;/p&gt;
-&lt;p&gt;看别人的网站做的好厉害！这个 &lt;a href=&quot;https://2heng.xin/theme-sakura/&quot;
         
       
     
