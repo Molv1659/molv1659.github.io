@@ -462,12 +462,7 @@
               <li>Upgrade the rerank model to one that understands on-call ticket summaries and scores them correctly</li>
             </ul>
           </li>
-          <li><b>Result:</b>
-            <ul class="sub2">
-              <li>Before launch: self-verified correct answers <b class="hl">5 → 17</b> of 32 real on-call questions (+37.5%)</li>
-              <li>After launch: weekly on-call tickets <b class="hl">~160 → ~100</b></li>
-            </ul>
-          </li>
+          <li><b>Result:</b> correct answers <b class="hl">5/32 → 17/32</b> (16% → 53%) on real on-call questions, hand-picked and self-graded</li>
         </ul>
       </div>
 
@@ -549,11 +544,11 @@
           </ul>
         </div>
         <div class="tk">
-          <div class="t">Fix it, don't switch</div>
+          <div class="t">Built isn't done</div>
           <ul class="e">
-            <li>Weak answers made it tempting to abandon RAG</li>
+            <li>Pipeline worked, but tested on real questions, answers were weak</li>
             <li>Found the retriever was the weak link</li>
-            <li>Fixed it: +37.5% answer accuracy, then ~160 → ~100 weekly on&#8209;call tickets</li>
+            <li>Fixed it: correct answers 16% → 53%</li>
           </ul>
         </div>
       </div>
