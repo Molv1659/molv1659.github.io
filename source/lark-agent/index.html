@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lark Permission Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e9e7e2;
+    --paper: #fbfaf7;
+    --ink: #1b1b1a;
+    --muted: #6b6a66;
+    --line: #d9d6cf;
+    --soft: #f1efea;
+    --accent: #2f5bd3;
+    --accent-soft: #eaf0fd;
+    --accent-line: #b9cbf5;
+    --good: #1f7a4d;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--ink); font-family: var(--sans); overflow: hidden; }
+
+  #stage { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; transform-origin: center center; }
+  .slide {
+    position: absolute; inset: 0; background: var(--paper); border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.12);
+    padding: 56px 80px 64px; display: none; flex-direction: column;
+  }
+  .slide.active { display: flex; }
+
+  .kicker { font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: 46px; line-height: 1.12; letter-spacing: -.01em; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 34px; line-height: 1.15; letter-spacing: -.01em; margin-bottom: 24px; }
+  h3 { font-size: 19px; font-weight: 600; margin-bottom: 10px; }
+  p, li { font-size: 19px; line-height: 1.5; }
+  .muted { color: var(--muted); }
+  .footer { position: absolute; left: 80px; right: 80px; bottom: 24px; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+  /* Slide 1 */
+  .s1 { justify-content: space-between; }
+  .s1 .lede { font-size: 23px; line-height: 1.5; max-width: 900px; margin-top: 22px; color: #33322f; }
+  .s1 .result { display: flex; align-items: flex-end; gap: 56px; }
+  .bignum { font-family: var(--serif); font-size: 104px; line-height: 1; font-weight: 600; letter-spacing: -.02em; }
+  .bignum .from { color: var(--muted); }
+  .bignum .arrow { color: var(--accent); font-size: 72px; margin: 0 14px; vertical-align: 12px; }
+  .bignum-label { font-size: 18px; color: var(--muted); margin-top: 12px; }
+  .side-stats { display: flex; gap: 48px; padding: 6px 0 8px 48px; border-left: 1px solid var(--line); margin-bottom: 30px; }
+  .side-stats .n { font-family: var(--serif); font-size: 44px; font-weight: 600; line-height: 1.1; }
+  .side-stats .l { font-size: 16px; color: var(--muted); margin-top: 4px; }
+  .s1 h1 { font-size: 56px; }
+  .wa { border-top: 1px solid var(--line); padding-top: 20px; }
+  .wa .k { font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .statement { font-family: var(--serif); font-size: 36px; line-height: 1.25; font-weight: 500; }
+  .pmeta { padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px dashed var(--line); display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 14.5px; line-height: 1.4; }
+  .pmeta > span { white-space: nowrap; }
+  .pmeta > span + span .k { width: auto; margin-right: 6px; }
+  .mypart { flex-basis: 100%; display: flex; align-items: baseline; }
+  .mypart ul { margin: 0; padding-left: 16px; }
+  .panel .mypart li { font-size: 14.5px; line-height: 1.4; margin: 0; }
+  .panel.accent .pmeta { border-bottom-color: var(--accent-line); }
+  .sub { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+  .pmeta .k { display: inline-block; width: 74px; flex-shrink: 0; font-weight: 600; color: var(--muted); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
+  .panel { display: flex; flex-direction: column; }
+  .p2d { margin: 6px 0 18px; }
+  .sketchwrap { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
+  .sketchwrap .half { display: flex; flex-direction: column; align-items: center; padding: 8px 20px 10px; }
+  .sketchwrap .half.lark { border-left: 2px dashed var(--line); }
+  .sketchwrap .cap { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .sketchwrap .lark .cap { color: var(--accent); }
+  .sketch { display: flex; align-items: center; gap: 10px; }
+  .sketch .node { font-size: 16px; font-weight: 500; padding: 10px 16px; border-radius: 8px; background: #fff; border: 1px solid #c9c6bf; white-space: nowrap; }
+  .sketch .node.strong { border: 1.5px solid var(--ink); font-weight: 600; }
+  .lark .sketch .node { border-color: var(--accent-line); background: var(--accent-soft); }
+  .lark .sketch .node.strong { border-color: var(--accent); color: #1d3f9e; }
+  .sketch .to { color: var(--muted); }
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding-top: 20px; gap: 32px; }
+  .meta .k { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .meta .v { font-size: 17px; line-height: 1.45; }
+
+  /* Slide 2 */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; }
+  .panel { border: 1px solid var(--line); border-radius: 12px; padding: 24px 30px; background: #fff; }
+  .panel.accent { border-color: var(--accent-line); background: var(--accent-soft); }
+  .panel .tag { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .panel.accent .tag { color: var(--accent); }
+  .panel ol, .panel ul { padding-left: 22px; }
+  .panel li { margin-bottom: 12px; font-size: 17.5px; line-height: 1.5; }
+  .panel li b { font-weight: 600; }
+  .insight { margin-bottom: 16px; padding: 14px 20px; border-left: 4px solid var(--accent); background: var(--soft); font-size: 19px; line-height: 1.4; }
+  .insight b { font-weight: 600; }
+  .ratio { display: flex; align-items: center; gap: 14px; margin: 6px 0 18px; }
+  .ratio .bar { height: 14px; border-radius: 7px; }
+  .ratio .lbl { font-size: 14px; color: var(--muted); white-space: nowrap; }
+
+  /* Slide 3 */
+  .diagram { flex: 1; display: flex; align-items: center; justify-content: center; }
+  svg text { font-family: var(--sans); }
+
+  /* Slide 4 */
+  .grid4 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; flex: 1; min-height: 0; }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 20px; background: #fff; display: flex; flex-direction: column; }
+  .card .num { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .08em; margin-bottom: 6px; }
+  .card h3 { font-size: 18px; margin-bottom: 6px; }
+  .card p, .card li { font-size: 14.5px; line-height: 1.4; }
+  .card ul { padding-left: 18px; }
+  .card li { margin-bottom: 3px; }
+  .flow { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+  .chip { font-size: 13px; padding: 5px 9px; border-radius: 6px; background: var(--soft); border: 1px solid var(--line); white-space: nowrap; }
+  .chip.hl { background: var(--accent-soft); border-color: var(--accent-line); color: #1d3f9e; }
+  .flow .to { color: var(--muted); font-size: 13px; }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 2px 0 8px; }
+  .vs > div { border-radius: 8px; padding: 7px 11px; font-size: 13.5px; line-height: 1.4; }
+  .vs .no { background: var(--soft); color: var(--muted); }
+  .vs .yes { background: var(--accent-soft); border: 1px solid var(--accent-line); }
+  .grid3 .card > ul > li { font-size: 15px; line-height: 1.45; margin-bottom: 4px; }
+  .grid3 .card > ul > li li { font-size: 15px; }
+  .card ul.sub2 { list-style: circle; padding-left: 18px; margin-top: 2px; }
+  .card p.validate { margin-top: 10px; font-size: 15px; line-height: 1.45; }
+  .vs ul { padding-left: 16px; margin: 4px 0 0; }
+  .card .vs li { font-size: 14px; line-height: 1.4; margin-bottom: 3px; }
+  .vs .risk { margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--accent-line); font-size: 13.5px; line-height: 1.4; color: #1d3f9e; }
+  .vs .risk b { display: inline; color: #1d3f9e; }
+  .vs b { display: block; font-size: 14.5px; color: var(--ink); margin-bottom: 2px; }
+  .why { margin-top: auto; padding-top: 6px; font-size: 13.5px; color: var(--muted); }
+  .why b { color: var(--ink); font-weight: 600; }
+  .card b.hl { color: var(--accent); }
+  .why b.hl { color: var(--accent); font-size: 17px; }
+
+  /* Slide 5 */
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 12px; flex: 1; min-height: 0; }
+  .card.wide { grid-column: 1 / -1; }
+  .grid3.p4 { grid-template-rows: 1fr; }
+  .cols5.p5 { grid-template-columns: 1fr 1fr; }
+  .p5 h3 { font-size: 21px; margin-bottom: 14px; color: var(--accent); }
+  .p5 .card { padding: 24px 28px; border-radius: 12px; }
+  .cols5.p5 .card p { font-size: 17.5px; line-height: 1.55; }
+  .cols5.p5 .mt { margin-top: 14px; }
+  .take { display: flex; flex-direction: column; }
+  .take .tk { flex: 1; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid var(--line); }
+  .take .tk:first-of-type { border-top: none; }
+  .take .t { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .take .e { font-size: 15.5px; color: var(--muted); }
+  .take ul.e { padding-left: 20px; margin: 0; }
+  .take ul.e li { margin-bottom: 3px; font-size: 16.5px; color: #55544f; }
+  .grid3 .card p { font-size: 15.5px; line-height: 1.5; }
+  .split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: center; }
+  .split ul.pts { padding-left: 18px; }
+  .split ul.pts li { font-size: 16px; margin-bottom: 12px; }
+  .two.stacked { grid-template-columns: 1fr; gap: 10px; }
+  .split .flow2 { margin: 0; }
+  .split .flow { flex-wrap: nowrap; gap: 5px; }
+  .split .chip { font-size: 12.5px; padding: 5px 8px; }
+  .flow2 { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 22px 14px; margin: 2px 0 10px; }
+  .flow2 .flow { margin: 0; }
+  .flow2 .lane { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .grid3 .card h3 { font-size: 19px; margin-bottom: 10px; color: var(--accent); }
+  .grid3 .card h3 .n { color: var(--accent); font-weight: 700; margin-right: 10px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .cols5 { display: grid; grid-template-columns: 1fr 1.15fr; gap: 18px; flex: 1; min-height: 0; }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .stack .card { flex: 1; }
+  .cols5 .card p { font-size: 15.5px; line-height: 1.5; }
+  .cols5 .num { margin-bottom: 10px; }
+  .mt { margin-top: 8px; }
+  .big { margin-top: auto; padding-top: 10px; color: var(--muted); }
+  .big b { font-family: var(--serif); font-size: 30px; color: var(--ink); margin-right: 6px; }
+  .refl { display: flex; flex-direction: column; gap: 18px; }
+  .refl h3 { font-size: 17px; margin-bottom: 4px; }
+  .refl .nx { color: #1d3f9e; margin-top: 3px; }
+  .draft { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #9a5b00; background: #fdf1dc; border: 1px solid #f0d29e; border-radius: 4px; padding: 3px 8px; margin-left: 12px; vertical-align: middle; }
+  .stats3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 28px; }
+  .stat { border: 1px solid var(--line); border-radius: 10px; padding: 20px 24px; background: #fff; }
+  .stat .n { font-family: var(--serif); font-size: 44px; font-weight: 600; line-height: 1.1; }
+  .stat .l { font-size: 15px; color: var(--muted); margin-top: 4px; }
+  .todo { color: #9a5b00; }
+
+  /* Nav */
+  #nav {
+    position: fixed; left: 50%; bottom: 10px; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 6px; padding: 5px;
+    background: rgba(251,250,247,.92); backdrop-filter: blur(8px);
+    border: 1px solid var(--line); border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    user-select: none; transition: opacity .3s;
+  }
+  #nav.idle { opacity: 0; }
+  #nav:hover { opacity: 1; }
+  #nav button.arrow {
+    width: 30px; height: 30px; border: 0; border-radius: 50%; background: transparent;
+    color: var(--muted); cursor: pointer; display: grid; place-items: center;
+  }
+  #nav button.arrow:hover:not(:disabled) { background: var(--soft); color: var(--ink); }
+  #nav button.arrow:disabled { opacity: .3; cursor: default; }
+  #nav button.arrow svg { width: 16px; height: 16px; }
+  #dots { display: flex; align-items: center; gap: 8px; padding: 0 6px; }
+  #dots button {
+    width: 8px; height: 8px; border: 0; padding: 0; border-radius: 999px;
+    background: var(--line); cursor: pointer; transition: width .25s, background .25s;
+  }
+  #dots button:hover { background: var(--muted); }
+  #dots button.on { width: 22px; background: var(--accent); }
+  @media print {
+    html, body { overflow: visible; background: #fff; }
+    #stage { position: static; transform: none !important; }
+    .slide { display: flex !important; position: relative; page-break-after: always; box-shadow: none; }
+    #nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- 1 · WHAT -->
+  <section class="slide s1">
+    <div>
+      <h1>Lark Permission Agent</h1>
+    </div>
+    <div class="wa">
+      <div class="k">What I did</div>
+      <p class="statement">Built a permission agent for Lark (ByteDance’s Slack equivalent) to unblock users who encounter permission issues.</p>
+    </div>
+    <div class="wa">
+      <div class="k">What I accomplished</div>
+      <div class="result">
+        <div>
+          <div class="bignum"><span class="from">~160</span><span class="arrow">→</span>~100</div>
+          <div class="bignum-label">team's weekly on-call tickets, within a few weeks of launch</div>
+        </div>
+        <div class="side-stats">
+          <div><div class="n">2,000+</div><div class="l">users</div></div>
+          <div><div class="n">10,000+</div><div class="l">conversations</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · WHY -->
+  <section class="slide">
+    <div class="kicker">Background · Why</div>
+    <div class="p2d">
+      <svg viewBox="0 0 1120 200" width="1120" height="160" role="img" aria-label="Web vs Lark sketch">
+        <defs>
+          <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6a66"/></marker>
+          <marker id="a2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f5bd3"/></marker>
+        </defs>
+        <text x="0" y="14" font-size="12" font-weight="600" letter-spacing="1.4" fill="#6b6a66">WEB VERSION AGENT</text>
+        <text x="1120" y="14" text-anchor="end" font-size="12" font-weight="600" letter-spacing="1.4" fill="#2f5bd3">LARK VERSION AGENT</text>
+        <line x1="560" y1="0" x2="560" y2="200" stroke="#c9c6bf" stroke-width="2" stroke-dasharray="6 6"/>
+
+        <g font-size="15" fill="#1b1b1a" text-anchor="middle">
+          <!-- top row: knowledge bases -->
+          <rect x="120" y="28" width="200" height="50" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="220" y="58" font-weight="500">Permission service</text>
+          <rect x="350" y="28" width="196" height="50" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="448" y="58" font-weight="500">Docs knowledge base</text>
+          <rect x="580" y="28" width="250" height="50" rx="8" fill="#eaf0fd" stroke="#b9cbf5"/>
+          <text x="705" y="58" font-weight="500">On-call history knowledge base</text>
+
+          <!-- bottom row -->
+          <rect x="0" y="128" width="160" height="62" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="80" y="155" font-weight="600">Permission admins</text>
+          <text x="80" y="176" font-size="12.5" fill="#6b6a66">~30k</text>
+
+          <rect x="195" y="128" width="125" height="62" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="257.5" y="164" font-weight="500">Web console</text>
+
+          <rect x="350" y="128" width="170" height="62" rx="8" fill="#fff" stroke="#1b1b1a" stroke-width="1.6"/>
+          <text x="435" y="155" font-weight="700">Agent</text>
+          <text x="435" y="176" font-size="12.5" fill="#6b6a66">LLM + tools</text>
+
+          <rect x="600" y="128" width="210" height="62" rx="8" fill="#eaf0fd" stroke="#2f5bd3" stroke-width="1.6"/>
+          <text x="705" y="155" font-weight="700" fill="#1d3f9e">Lark agent service</text>
+          <text x="705" y="176" font-size="12.5" fill="#6b6a66">integration service</text>
+
+          <rect x="850" y="128" width="100" height="62" rx="8" fill="#eaf0fd" stroke="#b9cbf5"/>
+          <text x="900" y="164" font-weight="500">Lark</text>
+
+          <rect x="990" y="128" width="130" height="62" rx="8" fill="#eaf0fd" stroke="#b9cbf5"/>
+          <text x="1055" y="155" font-weight="600">All employees</text>
+          <text x="1055" y="176" font-size="12.5" fill="#6b6a66">~200k</text>
+        </g>
+
+        <g stroke="#6b6a66" stroke-width="1.6" fill="none" marker-end="url(#a2)">
+          <line x1="160" y1="159" x2="191" y2="159"/>
+          <line x1="320" y1="159" x2="346" y2="159"/>
+          <line x1="445" y1="128" x2="448" y2="82"/>
+          <line x1="400" y1="128" x2="290" y2="81"/>
+        </g>
+        <g stroke="#2f5bd3" stroke-width="1.6" fill="none" marker-end="url(#a2b)">
+          <line x1="990" y1="159" x2="954" y2="159"/>
+          <line x1="850" y1="159" x2="814" y2="159"/>
+          <line x1="600" y1="159" x2="524" y2="159"/>
+          <line x1="500" y1="128" x2="640" y2="82"/>
+        </g>
+      </svg>
+    </div>
+    <div class="cols">
+      <div class="panel">
+        <div class="tag">Web version</div>
+        <div class="pmeta">
+          <span><span class="k">Timeline</span>~9 months</span>
+          <span><span class="k">Team</span>4 engineers</span>
+          <div class="mypart"><span class="k">My part</span><ul><li>Web frontend</li><li>Multi-step workflows in one agent turn</li><li>Citations for RAG answers</li></ul></div>
+        </div>
+        <div class="sub">Problems</div>
+        <ol>
+          <li><b>Limited reach.</b> The console is for ~30k permission admins. The ~200k regular employees who actually hit permission issues never go there.</li>
+          <li><b>Stale, incomplete knowledge.</b> Static docs don't cover every case, lag behind reality, and miss issues caused by recent code or config changes.</li>
+        </ol>
+      </div>
+      <div class="panel accent">
+        <div class="tag">Lark version</div>
+        <div class="pmeta">
+          <span><span class="k">Timeline</span>~3 months</span>
+          <span><span class="k">Team</span>just me</span>
+          <div class="mypart"><span class="k">My part</span>Owned end-to-end</div>
+        </div>
+        <div class="sub">What I did</div>
+        <ol>
+          <li><b>Brought the agent to where users already are</b> — Lark, where employees go to ask for help.</li>
+          <li><b>Built an on-call history knowledge base</b> from summarized past tickets, so answers reflect how issues were actually resolved.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · SYSTEM -->
+  <section class="slide">
+    <div class="kicker">System · Architecture</div>
+    <div class="diagram">
+      <svg viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-label="System diagram">
+        <defs>
+          <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6a66"/></marker>
+          <marker id="a3b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f5bd3"/></marker>
+        </defs>
+
+        <!-- agent + its tools -->
+        <g font-size="15" fill="#1b1b1a" text-anchor="middle">
+          <rect x="0" y="180" width="190" height="50" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="95" y="210" font-weight="500">Permission service</text>
+          <rect x="0" y="300" width="190" height="50" rx="8" fill="#fff" stroke="#c9c6bf"/>
+          <text x="95" y="330" font-weight="500">Docs knowledge base</text>
+          <rect x="250" y="232" width="160" height="66" rx="8" fill="#fff" stroke="#1b1b1a" stroke-width="1.6"/>
+          <text x="330" y="261" font-weight="700">Agent</text>
+          <text x="330" y="283" font-size="12.5" fill="#6b6a66">LLM + tools</text>
+        </g>
+        <g stroke="#6b6a66" stroke-width="1.6" fill="none" marker-end="url(#a3)">
+          <line x1="250" y1="252" x2="194" y2="214"/>
+          <line x1="250" y1="278" x2="194" y2="316"/>
+        </g>
+
+        <!-- lane labels -->
+        <g font-size="12" font-weight="600" letter-spacing="1.3" fill="#2f5bd3">
+          <text x="470" y="110">① LEARN FROM ON-CALL</text>
+          <text x="470" y="268">② ANSWER USERS</text>
+        </g>
+
+        <g font-size="15" fill="#1b1b1a" text-anchor="middle">
+          <!-- lane 1: knowledge -->
+          <rect x="470" y="0" width="300" height="58" rx="8" fill="#eaf0fd" stroke="#2f5bd3" stroke-width="1.4"/>
+          <text x="620" y="25" font-weight="600">On-call ticket summary</text>
+          <text x="620" y="45" font-weight="600">knowledge base</text>
+
+          <rect x="470" y="122" width="300" height="82" rx="8" fill="#eaf0fd" stroke="#2f5bd3" stroke-width="1.4"/>
+          <text x="620" y="146" font-weight="600">On-call ticket summarizer</text>
+          <text x="620" y="168" font-size="13" fill="#3d3c39">on "resolved": agent reads the full chat</text>
+          <text x="620" y="187" font-size="13" fill="#3d3c39">→ generates Q&amp;A summary</text>
+
+          <rect x="845" y="137" width="140" height="52" rx="6" fill="#fff" stroke="#b9cbf5"/>
+          <text x="915" y="159" font-size="13">On-call ticket</text>
+          <text x="915" y="177" font-size="13">group</text>
+
+          <!-- lane 2: chat -->
+          <rect x="470" y="280" width="300" height="70" rx="8" fill="#eaf0fd" stroke="#2f5bd3" stroke-width="1.4"/>
+          <text x="620" y="303" font-weight="600">Event listener</text>
+          <text x="620" y="324" font-size="13" fill="#3d3c39">Instant "working on it" reply</text>
+          <text x="620" y="341" font-size="13" fill="#3d3c39">Enqueue the request, ack Lark right away</text>
+
+          <rect x="520" y="378" width="200" height="30" rx="15" fill="#fff" stroke="#2f5bd3" stroke-width="1.4"/>
+          <text x="620" y="398" font-size="13" font-weight="600" fill="#1d3f9e">Message queue</text>
+
+          <rect x="470" y="436" width="300" height="70" rx="8" fill="#eaf0fd" stroke="#2f5bd3" stroke-width="1.4"/>
+          <text x="620" y="459" font-weight="600">Event consumer</text>
+          <text x="620" y="480" font-size="13" fill="#3d3c39">Runs the agent chat, streams the reply</text>
+          <text x="620" y="497" font-size="13" fill="#3d3c39">Retries failed requests</text>
+
+          <rect x="835" y="286" width="160" height="226" rx="8" fill="#fff" stroke="#b9cbf5"/>
+          <rect x="845" y="298" width="140" height="52" rx="6" fill="#fff" stroke="#b9cbf5"/>
+          <text x="915" y="320" font-size="13">Issue report</text>
+          <text x="915" y="338" font-size="13">group</text>
+          <rect x="845" y="448" width="140" height="52" rx="6" fill="#fff" stroke="#b9cbf5"/>
+          <text x="915" y="470" font-size="13">Bot P2P</text>
+          <text x="915" y="488" font-size="13">chat</text>
+          <text x="915" y="403" font-size="11.5" fill="#6b6a66">Lark chats</text>
+
+        </g>
+
+        <g stroke="#2f5bd3" stroke-width="1.6" fill="none" marker-end="url(#a3b)">
+          <!-- lane 1 -->
+          <line x1="845" y1="163" x2="774" y2="163"/>
+          <line x1="700" y1="122" x2="700" y2="62"/>
+          <line x1="470" y1="163" x2="414" y2="242"/>
+          <line x1="370" y1="232" x2="466" y2="30"/>
+          <!-- lane 2 -->
+          <line x1="835" y1="399" x2="774" y2="322"/>
+          <line x1="620" y1="350" x2="620" y2="374"/>
+          <line x1="620" y1="408" x2="620" y2="432"/>
+          <line x1="770" y1="471" x2="831" y2="410"/>
+          <line x1="470" y1="471" x2="414" y2="290"/>
+        </g>
+        <g font-size="12" fill="#2f5bd3">
+          <text x="810" y="156" text-anchor="middle">resolved</text>
+          <text x="708" y="96" text-anchor="start">update</text>
+          <text x="442" y="230" text-anchor="start">summarize</text>
+          <text x="410" y="120" text-anchor="end">retrieve</text>
+          <text x="818" y="350" text-anchor="middle">events</text>
+          <text x="818" y="462" text-anchor="middle">stream</text>
+          <text x="436" y="400" text-anchor="end">agent chat</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 4 · HOW -->
+  <section class="slide">
+    <div class="kicker">How · Key technical decisions</div>
+    <div class="grid3">
+      <div class="card">
+        <h3><span class="n">01</span>How to use on-call history?</h3>
+        <div class="vs">
+          <div class="no"><b>Fine-tune</b>
+            <ul>
+              <li>Turn tickets into training data</li>
+              <li>Stale as soon as new tickets land</li>
+              <li>Limited data, prone to overfitting</li>
+              <li>Risks the model's general ability</li>
+            </ul>
+          </div>
+          <div class="yes"><b>Summarize + RAG ✓</b>
+            <ul>
+              <li>Agent turns each resolved ticket into a Q&amp;A summary in a knowledge base</li>
+              <li>New tickets usable quickly</li>
+            </ul>
+            <div class="risk"><b>Risk:</b> can it handle very complicated permission on-call issues well?</div>
+          </div>
+        </div>
+        <p class="validate"><b>Validate first:</b> before building, I summarized 30 real on-call tickets — the summaries were high quality, so I went ahead.</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="n">02</span>Fixing weak answers from on-call history</h3>
+        <ul>
+          <li><b>Symptom:</b> summary quality was high, but RAG answers were still weak.</li>
+          <li><b>Root cause:</b> retriever couldn't separate relevant from irrelevant summaries.</li>
+          <li><b>Fix:</b>
+            <ul class="sub2">
+              <li>Retrieve more candidates, so truly relevant ones aren't missed</li>
+              <li>Upgrade the rerank model to one that understands on-call ticket summaries and scores them correctly</li>
+            </ul>
+          </li>
+          <li><b>Result:</b>
+            <ul class="sub2">
+              <li>Before launch: self-verified correct answers <b class="hl">5 → 17</b> of 32 real on-call questions (+37.5%)</li>
+              <li>After launch: weekly on-call tickets <b class="hl">~160 → ~100</b></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card wide">
+        <h3><span class="n">03</span>Reliable delivery, responsive experience</h3>
+        <div class="split">
+          <svg viewBox="0 0 630 172" width="100%" role="img" aria-label="Receive and process flow">
+            <defs>
+              <marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6a66"/></marker>
+              <marker id="a4b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f5bd3"/></marker>
+            </defs>
+            <g font-size="11.5" font-weight="600" letter-spacing="1" fill="#6b6a66">
+              <text x="0" y="39">RECEIVE</text>
+              <text x="0" y="109">PROCESS</text>
+            </g>
+            <g font-size="12.5" text-anchor="middle">
+              <rect x="80" y="20" width="118" height="28" rx="6" fill="#f1efea" stroke="#d9d6cf"/><text x="139" y="38.5" fill="#1b1b1a">Lark chat event</text>
+              <rect x="222" y="20" width="220" height="28" rx="6" fill="#eaf0fd" stroke="#b9cbf5"/><text x="332" y="38.5" fill="#1d3f9e">"working on it" reply → msg_id</text>
+              <rect x="466" y="20" width="64" height="28" rx="6" fill="#eaf0fd" stroke="#b9cbf5"/><text x="498" y="38.5" fill="#1d3f9e">enqueue</text>
+              <rect x="554" y="20" width="72" height="28" rx="6" fill="#f1efea" stroke="#d9d6cf"/><text x="590" y="38.5" fill="#1b1b1a">ack Lark</text>
+
+              <rect x="80" y="90" width="105" height="28" rx="6" fill="#f1efea" stroke="#d9d6cf"/><text x="132.5" y="108.5" fill="#1b1b1a">message queue</text>
+              <rect x="209" y="90" width="112" height="28" rx="6" fill="#eaf0fd" stroke="#b9cbf5"/><text x="265" y="108.5" fill="#1d3f9e">run agent chat</text>
+              <rect x="345" y="90" width="173" height="28" rx="6" fill="#eaf0fd" stroke="#b9cbf5"/><text x="431.5" y="108.5" fill="#1d3f9e">stream reply via msg_id</text>
+            </g>
+            <g stroke="#6b6a66" stroke-width="1.4" fill="none" marker-end="url(#a4)">
+              <line x1="200" y1="34" x2="219" y2="34"/>
+              <line x1="444" y1="34" x2="463" y2="34"/>
+              <line x1="532" y1="34" x2="551" y2="34"/>
+              <line x1="187" y1="104" x2="206" y2="104"/>
+              <line x1="323" y1="104" x2="342" y2="104"/>
+            </g>
+            <path d="M265 118 C265 152 132 152 132 122" stroke="#2f5bd3" stroke-width="1.4" fill="none" stroke-dasharray="4 3" marker-end="url(#a4b)"/>
+            <text x="198" y="164" text-anchor="middle" font-size="12" fill="#2f5bd3">retry on failure</text>
+          </svg>
+          <ul class="pts">
+            <li><b>Decouple receiving from processing</b></li>
+            <li><b>Stream the reply back</b> — typewriter effect in the same message</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · BEYOND LAUNCH & TAKEAWAYS -->
+  <section class="slide">
+    <div class="kicker">Beyond launch · Takeaways</div>
+    <div class="cols5 p5">
+      <div class="stack">
+        <div class="card">
+          <h3>Collaboration with the on-call platform team</h3>
+          <p>One of the <b>first integration partners</b> for the on-call platform team's new pre-ticket step, <b>the last stop before a ticket is filed</b>.</p>
+          <p class="mt"><b>Change:</b> static doc lookup → our agent's answer</p>
+          <p class="mt"><b>My work:</b> adapted our chat API to the format their flow expected</p>
+        </div>
+        <div class="card">
+          <h3>Beyond our own agent · MCP server</h3>
+          <p><b>My work:</b> packaged the <b>knowledge base + service log tools</b> as an MCP server, so people's personal agents and other teams' agents can diagnose permission issues too.</p>
+          <p class="mt"><b>Result:</b> <b class="hl">#5</b> of 230 on ByteDance's MCP marketplace</p>
+        </div>
+      </div>
+      <div class="card take">
+        <h3>Takeaways</h3>
+        <div class="tk">
+          <div class="t">Go where users already are</div>
+          <ul class="e">
+            <li>Lark chat groups</li>
+            <li>On-call pre-ticket step</li>
+            <li>MCP for users' agents</li>
+          </ul>
+        </div>
+        <div class="tk">
+          <div class="t">Validate fast, then invest</div>
+          <ul class="e">
+            <li>30-ticket summary test</li>
+            <li>2-week Lark MVP</li>
+            <li>2-week on-call knowledge base</li>
+            <li>Then ~2 months hardening what worked</li>
+          </ul>
+        </div>
+        <div class="tk">
+          <div class="t">Fix it, don't switch</div>
+          <ul class="e">
+            <li>Weak answers made it tempting to abandon RAG</li>
+            <li>Found the retriever was the weak link</li>
+            <li>Fixed it: +37.5% answer accuracy, then ~160 → ~100 weekly on&#8209;call tickets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div id="nav">
+  <button class="arrow" id="prev" aria-label="Previous slide"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg></button>
+  <div id="dots"></div>
+  <button class="arrow" id="next" aria-label="Next slide"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5 10.5 8 6 12.5"/></svg></button>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  const stage = document.getElementById('stage');
+  const dots = document.getElementById('dots');
+  const nav = document.getElementById('nav');
+  slides.forEach((_, k) => {
+    const d = document.createElement('button');
+    d.setAttribute('aria-label', 'Slide ' + (k + 1));
+    d.onclick = () => show(k);
+    dots.appendChild(d);
+  });
+  let idleTimer;
+  function wake() {
+    nav.classList.remove('idle');
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => nav.classList.add('idle'), 2500);
+  }
+  addEventListener('mousemove', wake);
+  let i = Math.min(Math.max(parseInt(location.hash.slice(1)) - 1 || 0, 0), slides.length - 1);
+
+  function show(n) {
+    i = Math.min(Math.max(n, 0), slides.length - 1);
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+    document.getElementById('prev').disabled = i === 0;
+    document.getElementById('next').disabled = i === slides.length - 1;
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  function fit() {
+    const s = Math.min(innerWidth / 1340, innerHeight / 770);
+    stage.style.transform = `translate(-50%, -50%) scale(${s})`;
+  }
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(i + 1); }
+    if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); show(i - 1); }
+    if (e.key === 'f') document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+  });
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  addEventListener('resize', fit);
+  fit(); show(i); wake();
+</script>
+</body>
+</html>
